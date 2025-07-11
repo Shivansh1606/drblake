@@ -112,7 +112,7 @@ export default function Portfolio() {
                   Shivansh
                 </h1>
                 <p className="text-xl sm:text-2xl text-blue-200 mb-8">
-                  Software Developer
+                  Software Developer/ Data Analyst
                 </p>
                 
                 {/* Contact Links */}
