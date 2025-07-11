@@ -7,7 +7,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Linkedin, Github, Phone, User, Code, Database, ArrowLeft, Send, Heart, FileText, Award } from 'lucide-react';
 import Link from 'next/link';
-import { supabase } from '@/lib/supabase';
 import PortfolioNav from '@/components/PortfolioNav';
 
 const techData = [
@@ -36,13 +35,10 @@ export default function Portfolio() {
 
   const fetchSubmissions = async () => {
     try {
-      const { data, error } = await supabase
-        .from('contact_submissions')
-        .select('*')
-        .order('created_at', { ascending: false });
-      
-      if (error) throw error;
-      setSubmissions(data || []);
+      const response = await fetch('/api/submissions');
+      if (!response.ok) throw new Error('Failed to fetch submissions');
+      const data = await response.json();
+      setSubmissions(data);
     } catch (error) {
       console.error('Error fetching submissions:', error);
     }
@@ -53,18 +49,19 @@ export default function Portfolio() {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert([
-          {
-            name: contactForm.name,
-            email: contactForm.email,
-            message: contactForm.message,
-            created_at: new Date().toISOString()
-          }
-        ]);
+      const response = await fetch('/api/submissions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: contactForm.name,
+          email: contactForm.email,
+          message: contactForm.message,
+        }),
+      });
 
-      if (error) throw error;
+      if (!response.ok) throw new Error('Failed to submit form');
 
       alert('Message sent successfully!');
       setContactForm({ name: '', email: '', message: '' });
