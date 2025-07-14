@@ -60,7 +60,9 @@ export default function Footer() {
             <p className="text-gray-400 text-sm">
               © 2025 | made by{' '}
               <Link 
-                href="/portfolio" 
+                href="https://shivanshinfo.netlify.app/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-teal-400 hover:text-teal-300 transition-colors duration-300 font-medium"
               >
                 shivansh
