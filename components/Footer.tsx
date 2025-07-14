@@ -65,12 +65,8 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-teal-400 hover:text-teal-300 transition-colors duration-300 font-medium relative group"
                 title="Check my portfolio"
-                title="Check my portfolio"
               >
                 made by shivansh
-                <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-gray-600">
-                  Check my portfolio
-                </span>
                 <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-gray-600">
                   Check my portfolio
                 </span>
