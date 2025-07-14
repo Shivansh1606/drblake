@@ -59,13 +59,17 @@ export default function Footer() {
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
             <p className="text-gray-400 text-sm">
               © 2025 | {' '}
-              <Link 
+              <Link
                 href="https://shivanshinfo.netlify.app/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-teal-400 hover:text-teal-300 transition-colors duration-300 font-medium"
+                className="text-teal-400 hover:text-teal-300 transition-colors duration-300 font-medium relative group"
+                title="Check my portfolio"
               >
-               made by shivansh
+                made by shivansh
+                <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-gray-600">
+                  Check my portfolio
+                </span>
               </Link>
               <Heart className="inline h-4 w-4 text-red-500 mx-1" />
             </p>
