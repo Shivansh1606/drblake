@@ -58,14 +58,14 @@ export default function Footer() {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
             <p className="text-gray-400 text-sm">
-              © 2025 | made by{' '}
+              © 2025 | {' '}
               <Link 
                 href="https://shivanshinfo.netlify.app/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-teal-400 hover:text-teal-300 transition-colors duration-300 font-medium"
               >
-                shivansh
+               made by shivansh
               </Link>
               <Heart className="inline h-4 w-4 text-red-500 mx-1" />
             </p>
